@@ -1,2 +1,5 @@
-.vscode/
-.idea/
+/vscode/
+/idea/
+/bin/
+.classpath
+.project

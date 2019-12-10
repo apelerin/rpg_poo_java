@@ -40,24 +40,25 @@ public class Main {
     public static Character createCharacter() {
     	Character newCharacter = new Character();
         Scanner sc = new Scanner(System.in);
-        int entry;
+        String entry;
         System.out.println("Type here, the stats of your character...");
         System.out.println("What is the name of your character ?");
-        entry = sc.nextInt();
+        entry = sc.nextLine();
         System.out.println(" ");
-        newCharacter.name = entry;
+        newCharacter.setName(entry);
         System.out.println("What is the strenght of your character ?");
-        entry = sc.nextInt();
+        int entryInt;
+        entryInt = sc.nextInt();
         System.out.println(" ");
-        newCharacter.damage = entry;
+        newCharacter.setDamage(entryInt);
         System.out.println("What is the vitality of your character ?");
-        entry = sc.nextInt();
+        entryInt = sc.nextInt();
         System.out.println(" ");
-        newCharacter.hp = entry;
+        newCharacter.setHp(entryInt);
         System.out.println("What is the speed of your character ?");
-        entry = sc.nextInt();
+        entryInt = sc.nextInt();
         System.out.println(" ");
-        newCharacter.initiative = entry;
+        newCharacter.setInitiative(entryInt);
         System.out.println(newCharacter.toString());
         return newCharacter;
     }

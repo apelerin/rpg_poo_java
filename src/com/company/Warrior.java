@@ -1,10 +1,10 @@
 package com.company;
 
-protected class Warrior extends Character {
+public class Warrior extends Character {
     int shield;
     //int reduceDmg;
 
-    public int getShield{
+    public int getShield() {
         return this.shield;
     } 
     /*public int getReduceDmg{

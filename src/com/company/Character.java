@@ -1,12 +1,12 @@
 package com.company;
 
 public class Character {
-    private int name;
+    private String name;
     private int damage;
     private int hp;
     private int initiative;
 
-    public int getName() {
+    public String getName() {
         return this.name;
     }
 
@@ -24,6 +24,22 @@ public class Character {
     
     public void receiveDamages(int amount) {
     	this.hp = this.hp - amount;
+    }
+    
+    public void setName(String name) {
+    	this.name = name;
+    }
+    
+    public void setHp(int hp) {
+    	this.hp = hp;
+    }
+
+    public void setDamage(int damage) {
+    	this.damage = damage;
+    }
+    
+    public void setInitiative(int initiative) {
+    	this.initiative = initiative;
     }
     
     public String toString() {

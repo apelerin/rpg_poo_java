@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-    // write your code here
+        // write your code here
         boolean choice = true;
         Character[] list_character = new Character[0];
         Scanner sc = new Scanner(System.in);
@@ -24,8 +24,11 @@ public class Main {
                     helpCommand();
                     break;
                 case "new character":
-                	list_character = Arrays.copyOf(list_character, list_character.length + 1);
-                	list_character[list_character.length - 1] = createCharacter();
+                    list_character = Arrays.copyOf(list_character, list_character.length + 1);
+                    list_character[list_character.length - 1] = createCharacter();
+                    break;
+                case "characters":
+                    charListCommand();
                     break;
                 default:
                     System.out.println("Invalid command.");
@@ -35,10 +38,11 @@ public class Main {
     }
     public static void helpCommand() {
         System.out.println("help : Show this help menu.");
+        System.out.println("characters : Display all the existing characters");
         System.out.println("exit : Exit the game.");
     }
     public static Character createCharacter() {
-    	Character newCharacter = new Character();
+        Character newCharacter = new Character();
         Scanner sc = new Scanner(System.in);
         String entry;
         System.out.println("Type here, the stats of your character...");
@@ -61,5 +65,17 @@ public class Main {
         newCharacter.setInitiative(entryInt);
         System.out.println(newCharacter.toString());
         return newCharacter;
+    }
+    public static void charListCommand() {
+        for (int i = 1; i < list_character.length; i++) {
+            System.out.println("ID " + i);
+            System.out.println("Name " + list_character[i].getName() );
+            System.out.println("Strenght " + list_character[i].setDamage() );
+            System.out.println("Health " + list_character[i].setHp() );
+            System.out.println("Initiative " + list_character[i].setInitiative() );
+            System.out.println(" ");
+        }
+        System.out.println("CHECK : End of List.");
+        System.out.println(" ");
     }
 }

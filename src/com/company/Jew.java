@@ -1,9 +1,12 @@
 package com.company;
 
 public class Jew extends Character {
-    private int heal;
+    protected int heal;
 
-    public int getHeal() {return this.heal; }
+    public int getHeal() {
+    	return this.heal;
+    }
+
     public int strenght() {
         healHp();
         return this.damage;

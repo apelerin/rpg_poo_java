@@ -67,12 +67,12 @@ public class Main {
         return newCharacter;
     }
     public static void charListCommand() {
-        for (int i = 1; i < list_character.length; i++) {
-            System.out.println("ID " + i);
-            System.out.println("Name " + list_character[i].getName() );
-            System.out.println("Strenght " + list_character[i].setDamage() );
-            System.out.println("Health " + list_character[i].setHp() );
-            System.out.println("Initiative " + list_character[i].setInitiative() );
+        for (int i = 0; i < list_character.length; i++) {
+            System.out.println("ID : " + i);
+            System.out.println("Name : " + list_character[i].getName() );
+            System.out.println("Strenght : " + list_character[i].setDamage() );
+            System.out.println("Health : " + list_character[i].setHp() );
+            System.out.println("Initiative : " + list_character[i].setInitiative() );
             System.out.println(" ");
         }
         System.out.println("CHECK : End of List.");

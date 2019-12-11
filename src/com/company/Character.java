@@ -1,10 +1,10 @@
 package com.company;
 
 public class Character {
-    private String name;
-    private int damage;
-    private int hp;
-    private int initiative;
+    protected String name;
+    protected int damage;
+    protected int hp;
+    protected int initiative;
 
     public String getName() {
         return this.name;

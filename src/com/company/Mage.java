@@ -6,4 +6,10 @@ public class Mage extends Character {
     public int getPower() {
         return this.power;
     }
+
+    public int strenght() {
+        int damagePower = this.damage + this.power;
+        this.power = this.power / 2;
+        return damagePower;
+    }
 }

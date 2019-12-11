@@ -2,7 +2,7 @@ package com.company;
 
 public class Thief extends Character {
 	private int esquiveChance;
-	private int critChance;
+	private int dodgeChance;
 	private boolean haveCrit = false;
 	
 	public int strenght() {
@@ -15,8 +15,8 @@ public class Thief extends Character {
 	}
 	
 	public void receiveDamages(int amount) {
-		if (esquiveChance < 0 + (int)(Math.random() * ((100 - 0) + 1))) {
-			System.out.println(this.name + " a esquivé!");
+		if (dodgeChance < 0 + (int)(Math.random() * ((100 - 0) + 1))) {
+			System.out.println(this.name + " dodged !");
 			return;
 		}
 		this.hp = this.hp - amount;

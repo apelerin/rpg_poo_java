@@ -1,7 +1,6 @@
 package com.company;
 
 public class Thief extends Character {
-	private int esquiveChance;
 	private int dodgeChance;
 	private boolean haveCrit = false;
 	

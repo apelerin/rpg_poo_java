@@ -28,7 +28,7 @@ public class Main {
                     list_character = Arrays.copyOf(list_character, list_character.length + 1);
                     list_character[list_character.length - 1] = createCharacter();
                     break;
-                case "characters":
+                case "list":
                     charListCommand(list_character);
                     break;
                 case "Fight!":
@@ -53,6 +53,8 @@ public class Main {
         System.out.println("new character : Create a new character");
     }
 
+    // create a character
+    // TODO : include a class creation
     public static Character createCharacter() {
         Character newCharacter = new Character();
         Scanner sc = new Scanner(System.in);
@@ -79,6 +81,7 @@ public class Main {
         return newCharacter;
     }
 
+    // list the existing characters
     public static void charListCommand(Character[] list_character) {
         for (int i = 0; i < list_character.length; i++) {
             System.out.println("ID : " + i);
@@ -95,7 +98,7 @@ public class Main {
     public static void letsFight(Character char1, Character char2) {
         int turn = 1;
         Character winner = null;
-        // Sort the characters so the one with the bigger initiative is char1 ans start first
+        // Sort the characters so the one with the bigger initiative is char1 and start first
         if (char1.getInitiative() < char2.getInitiative()) {
             Character tmp = char1;
             char1 = char2;

@@ -72,8 +72,11 @@ public class Main {
     	else if (entryInt == 2) {
     		newCharacter = createWarrior();
     	}
-    	else {
+    	else if (entryInt == 3) {
     		newCharacter = createThief();
+    	}
+    	else {
+    		newCharacter = createJew();
     	}
         newCharacter.setAttrib();
         System.out.println(newCharacter.toString());
@@ -124,18 +127,23 @@ public class Main {
         System.out.println("The winner is " + winner.getName() + "! The combat ended at turn " + turn + ".");
     }
 
-    public static Character createWarrior() {
+    public static Warrior createWarrior() {
     	Warrior newCharacter = new Warrior();
     	return newCharacter;
     }
     
-    public static Character createMage() {
+    public static Mage createMage() {
     	Mage newCharacter = new Mage();
     	return newCharacter;
     }
 
-	public static Character createThief() {
+	public static Thief createThief() {
 		Thief newCharacter = new Thief();
+		return newCharacter;
+	}
+	
+	public static Jew createJew() {
+		Jew newCharacter = new Jew();
 		return newCharacter;
 	}
 }

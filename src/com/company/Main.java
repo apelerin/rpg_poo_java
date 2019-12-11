@@ -56,27 +56,26 @@ public class Main {
     // create a character
     // TODO : include a class creation
     public static Character createCharacter() {
-        Character newCharacter = new Character();
-        Scanner sc = new Scanner(System.in);
-        String entry;
-        int entryInt;
-        System.out.println("Type here, the stats of your character...");
-        System.out.println("What is the name of your character ?");
-        entry = sc.nextLine();
-        System.out.println(" ");
-        newCharacter.setName(entry);
-        System.out.println("What is the strenght of your character ?");
-        entryInt = sc.nextInt();
-        System.out.println(" ");
-        newCharacter.setDamage(entryInt);
-        System.out.println("What is the vitality of your character ?");
-        entryInt = sc.nextInt();
-        System.out.println(" ");
-        newCharacter.setHp(entryInt);
-        System.out.println("What is the speed of your character ?");
-        entryInt = sc.nextInt();
-        System.out.println(" ");
-        newCharacter.setInitiative(entryInt);
+    	int entryInt;
+    	Character newCharacter = new Character();
+    	Scanner sc = new Scanner(System.in);
+    	System.out.println("What class do you want your character to be?");
+    	System.out.println("1. Mage" + '\n' + "2. Warrior" + '\n' + "3. Thief" + '\n' + "4. Priest");
+    	entryInt = sc.nextInt();
+    	while (entryInt < 1 || entryInt > 4) {
+    		System.out.println("Please choose a value between 1 and 4.");
+    		entryInt = sc.nextInt();
+    	}
+    	if (entryInt == 1) {
+    		newCharacter = createMage();
+    	}
+    	else if (entryInt == 2) {
+    		newCharacter = createWarrior();
+    	}
+    	else {
+    		newCharacter = createThief();
+    	}
+        newCharacter.setAttrib();
         System.out.println(newCharacter.toString());
         return newCharacter;
     }
@@ -124,4 +123,19 @@ public class Main {
         }
         System.out.println("The winner is " + winner.getName() + "! The combat ended at turn " + turn + ".");
     }
+
+    public static Character createWarrior() {
+    	Warrior newCharacter = new Warrior();
+    	return newCharacter;
+    }
+    
+    public static Character createMage() {
+    	Mage newCharacter = new Mage();
+    	return newCharacter;
+    }
+
+	public static Character createThief() {
+		Thief newCharacter = new Thief();
+		return newCharacter;
+	}
 }

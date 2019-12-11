@@ -36,7 +36,7 @@ public class Main {
                 	char1 = sc.nextInt();
                 	System.out.println("Choose the second opponent");
                 	char2 = sc.nextInt();
-                	letsFight(list_character, char1, char2);
+                	letsFight(list_character[char1], list_character[char2]);
                 	break;
                 default:
                     System.out.println("Invalid command.");
@@ -92,7 +92,33 @@ public class Main {
         System.out.println(" ");
     }
 
-    public static Character[] letsFight(Character[] list_character, int indexChar1, int indexChar2) {
-    	return list_character;
+    public static void letsFight(Character char1, Character char2) {
+    	int turn = 1;
+    	Character winner = null;
+    	// Sort the characters so the one with the bigger initiative is char1 ans start first
+    	if (char1.getInitiative() < char2.getInitiative()) {
+    		Character tmp = char1;
+    		char1 = char2;
+    		char2 = tmp;
+    	}
+    	while (true) {
+    		System.out.println("Turn: " + turn);
+    		System.out.println("Opponent 1: " + char1.getName() + '\n' + "Life: " + char1.getHp());
+    		System.out.println("Opponent 2: " + char2.getName() + '\n' + "Life: " + char2.getHp());
+    		System.out.println(char1.getName() + " attacks " + char2.getName());
+    		char2.receiveDamages(char1.strenght());
+    		if (char2.getHp() <= 0) {
+    			winner = char1;
+    			break;
+    		}
+    		System.out.println(char2.getName() + " attacks " + char1.getName());
+    		char1.receiveDamages(char2.strenght());
+    		if (char1.getHp() <= 0) {
+    			winner = char2;
+    			break;
+    		}
+    		turn++;
+    	}
+    	System.out.println("The winner is " + winner.getName() + "! The combat ended at turn " + turn + ".");
     }
 }

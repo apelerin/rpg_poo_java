@@ -28,7 +28,7 @@ public class Main {
                     list_character[list_character.length - 1] = createCharacter();
                     break;
                 case "characters":
-                    charListCommand();
+                    charListCommand(list_character);
                     break;
                 default:
                     System.out.println("Invalid command.");
@@ -38,7 +38,7 @@ public class Main {
     }
     public static void helpCommand() {
         System.out.println("help : Show this help menu.");
-        System.out.println("characters : Display all the existing characters");
+        System.out.println("list : Display all the existing characters");
         System.out.println("exit : Exit the game.");
     }
     public static Character createCharacter() {
@@ -66,13 +66,13 @@ public class Main {
         System.out.println(newCharacter.toString());
         return newCharacter;
     }
-    public static void charListCommand() {
+    public static void charListCommand(Character[] list_character) {
         for (int i = 0; i < list_character.length; i++) {
             System.out.println("ID : " + i);
             System.out.println("Name : " + list_character[i].getName() );
-            System.out.println("Strenght : " + list_character[i].setDamage() );
-            System.out.println("Health : " + list_character[i].setHp() );
-            System.out.println("Initiative : " + list_character[i].setInitiative() );
+            System.out.println("Strenght : " + list_character[i].strenght() );
+            System.out.println("Health : " + list_character[i].getHp() );
+            System.out.println("Initiative : " + list_character[i].getInitiative() );
             System.out.println(" ");
         }
         System.out.println("CHECK : End of List.");

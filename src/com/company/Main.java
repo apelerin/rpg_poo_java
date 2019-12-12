@@ -88,6 +88,7 @@ public class Main {
         for (int i = 0; i < list_character.length; i++) {
             System.out.println("ID : " + i);
             System.out.println("Name : " + list_character[i].getName() );
+            System.out.println("Class/ Job : " + getJob() );
             System.out.println("Strenght : " + list_character[i].strenght() );
             System.out.println("Health : " + list_character[i].getHp() );
             System.out.println("Initiative : " + list_character[i].getInitiative() );

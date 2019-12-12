@@ -6,6 +6,10 @@ public class Mage extends Character {
     protected int power;
     protected String job = "Mage";
 
+    public String getJob() {
+        return this.job;
+    }
+
     public int getPower() {
         return this.power;
     }

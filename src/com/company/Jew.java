@@ -6,6 +6,10 @@ public class Jew extends Character {
     protected int heal;
     protected String job = "Jew";
 
+    public String getJob() {
+        return this.job;
+    }
+
     public int getHeal() {
         return this.heal;
     }

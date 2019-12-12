@@ -6,6 +6,10 @@ public class Warrior extends Character {
     protected int shield;
     protected String job = "Warrior";
 
+    public String getJob() {
+        return this.job;
+    }
+
     public int getShield() {
         return this.shield;
     }

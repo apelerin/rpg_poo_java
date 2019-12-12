@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Jew extends Character {
     protected int heal;
     protected String job = "Jew";
+    protected int maxHp;
 
     public String getJob() {
         return this.job;
@@ -15,6 +16,7 @@ public class Jew extends Character {
     }
 
     public void setHeal(int amount) {
+    	this.maxHp = amount;
         this.heal = amount;
     }
 
@@ -22,11 +24,17 @@ public class Jew extends Character {
         healHp();
         return this.damage;
     }
+    
+    public int getHpMax() {
+    	return this.maxHp;
+    }
 
     public void healHp() {
-        System.out.println(this.name + " Healed himself for " + this.heal + " Hp !");
-        this.hp = this.hp + this.heal;
-        System.out.println(this.name + " has now " + this.hp + " Hp !");
+    	if (this.getHp() + this.getHeal() < getHpMax()) {
+    		System.out.println(this.name + " Healed himself for " + this.heal + " Hp !");
+    		this.hp = this.hp + this.heal;
+    		System.out.println(this.name + " has now " + this.hp + " Hp !");
+    	}
     }
 
     public void setAttrib() {

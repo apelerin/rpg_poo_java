@@ -7,7 +7,12 @@ public class Character {
     protected int damage;
     protected int hp;
     protected int initiative;
-
+    protected String job = "Basic";
+    
+    public String getJob() {
+    	return this.job;
+    }
+    
     public String getName() {
         return this.name;
     }

@@ -5,13 +5,17 @@ import java.util.Scanner;
 public class Jew extends Character {
     protected int heal;
     protected String job = "Jew";
-    
-    public int getHeal() {
-    	return this.heal;
+
+    public String getJob() {
+        return this.job;
     }
-    
+
+    public int getHeal() {
+        return this.heal;
+    }
+
     public void setHeal(int amount) {
-    	this.heal = amount;
+        this.heal = amount;
     }
 
     public int strenght() {
@@ -24,16 +28,16 @@ public class Jew extends Character {
         this.hp = this.hp + this.heal;
         System.out.println(this.name + " has now " + this.hp + " Hp !");
     }
-    
+
     public void setAttrib() {
-    	Scanner sc = new Scanner(System.in);
-    	int entryInt;
-    	String entry;
-    	System.out.println("Type here, the stats of your character...");
+        Scanner sc = new Scanner(System.in);
+        int entryInt;
+        String entry;
+        System.out.println("Type here, the stats of your character...");
         System.out.println("What is the name of your character ?");
         entry = sc.nextLine();
         System.out.println(" ");
-		this.setName(entry);
+        this.setName(entry);
         System.out.println("What is the strenght of your character ?");
         entryInt = sc.nextInt();
         System.out.println(" ");

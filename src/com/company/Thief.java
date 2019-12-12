@@ -7,7 +7,11 @@ public class Thief extends Character {
 	protected int critChance;
 	protected boolean haveCrit = false;
 	protected String job = "Thief";
-	
+
+	public String getJob() {
+		return this.job;
+	}
+
 	public int strenght() {
 		if (this.haveCrit == false && critChance < 0 + (int)(Math.random() * ((100 - 0) + 1))) {
 			this.haveCrit = true;

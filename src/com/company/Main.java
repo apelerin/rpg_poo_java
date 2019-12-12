@@ -67,16 +67,16 @@ public class Main {
     		entryInt = sc.nextInt();
     	}
     	if (entryInt == 1) {
-    		newCharacter = createMage();
+    		newCharacter = new Mage();
     	}
     	else if (entryInt == 2) {
-    		newCharacter = createWarrior();
+    		newCharacter = new Warrior();
     	}
     	else if (entryInt == 3) {
-    		newCharacter = createThief();
+    		newCharacter = new Thief();
     	}
     	else {
-    		newCharacter = createJew();
+    		newCharacter = new Jew();
     	}
         newCharacter.setAttrib();
         System.out.println(newCharacter.toString());
@@ -126,24 +126,4 @@ public class Main {
         }
         System.out.println("The winner is " + winner.getName() + "! The combat ended at turn " + turn + ".");
     }
-
-    public static Warrior createWarrior() {
-    	Warrior newCharacter = new Warrior();
-    	return newCharacter;
-    }
-    
-    public static Mage createMage() {
-    	Mage newCharacter = new Mage();
-    	return newCharacter;
-    }
-
-	public static Thief createThief() {
-		Thief newCharacter = new Thief();
-		return newCharacter;
-	}
-	
-	public static Jew createJew() {
-		Jew newCharacter = new Jew();
-		return newCharacter;
-	}
 }

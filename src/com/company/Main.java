@@ -1,11 +1,21 @@
 package com.company;
 
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.Scanner;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import org.json.simple.parser.JSONParser;
+
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws JSONException, IOException {
         boolean choice = true;
         Character[] list_character = new Character[0];
         Scanner sc = new Scanner(System.in);
@@ -42,6 +52,13 @@ public class Main {
                     System.out.println("Invalid command.");
             }
         }
+        JSONObject obj = new JSONObject();
+        obj.put("Liste", list_character);
+        try (FileWriter file = new FileWriter("characterSaved.txt")) {
+			file.write(obj.toString());
+			System.out.println("Successfully Copied JSON Object to File...");
+			System.out.println("\nJSON Object: " + obj);
+        }
         sc.close();
     }
 
@@ -54,7 +71,6 @@ public class Main {
     }
 
     // create a character
-    // TODO : include a class creation
     public static Character createCharacter() {
     	int entryInt;
     	Character newCharacter = new Character();

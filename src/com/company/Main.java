@@ -28,7 +28,7 @@ public class Main {
                     list_character = Arrays.copyOf(list_character, list_character.length + 1);
                     list_character[list_character.length - 1] = createCharacter();
                     break;
-                case "characters":
+                case "list":
                     charListCommand(list_character);
                     break;
                 case "Fight!":
@@ -53,32 +53,37 @@ public class Main {
         System.out.println("new character : Create a new character");
     }
 
+    // create a character
+    // TODO : include a class creation
     public static Character createCharacter() {
-        Character newCharacter = new Character();
-        Scanner sc = new Scanner(System.in);
-        String entry;
-        int entryInt;
-        System.out.println("Type here, the stats of your character...");
-        System.out.println("What is the name of your character ?");
-        entry = sc.nextLine();
-        System.out.println(" ");
-        newCharacter.setName(entry);
-        System.out.println("What is the strenght of your character ?");
-        entryInt = sc.nextInt();
-        System.out.println(" ");
-        newCharacter.setDamage(entryInt);
-        System.out.println("What is the vitality of your character ?");
-        entryInt = sc.nextInt();
-        System.out.println(" ");
-        newCharacter.setHp(entryInt);
-        System.out.println("What is the speed of your character ?");
-        entryInt = sc.nextInt();
-        System.out.println(" ");
-        newCharacter.setInitiative(entryInt);
+    	int entryInt;
+    	Character newCharacter = new Character();
+    	Scanner sc = new Scanner(System.in);
+    	System.out.println("What class do you want your character to be?");
+    	System.out.println("1. Mage" + '\n' + "2. Warrior" + '\n' + "3. Thief" + '\n' + "4. Priest");
+    	entryInt = sc.nextInt();
+    	while (entryInt < 1 || entryInt > 4) {
+    		System.out.println("Please choose a value between 1 and 4.");
+    		entryInt = sc.nextInt();
+    	}
+    	if (entryInt == 1) {
+    		newCharacter = new Mage();
+    	}
+    	else if (entryInt == 2) {
+    		newCharacter = new Warrior();
+    	}
+    	else if (entryInt == 3) {
+    		newCharacter = new Thief();
+    	}
+    	else {
+    		newCharacter = new Jew();
+    	}
+        newCharacter.setAttrib();
         System.out.println(newCharacter.toString());
         return newCharacter;
     }
 
+    // list the existing characters
     public static void charListCommand(Character[] list_character) {
         for (int i = 0; i < list_character.length; i++) {
             System.out.println("ID : " + i);
@@ -95,7 +100,7 @@ public class Main {
     public static void letsFight(Character char1, Character char2) {
         int turn = 1;
         Character winner = null;
-        // Sort the characters so the one with the bigger initiative is char1 ans start first
+        // Sort the characters so the one with the bigger initiative is char1 and start first
         if (char1.getInitiative() < char2.getInitiative()) {
             Character tmp = char1;
             char1 = char2;

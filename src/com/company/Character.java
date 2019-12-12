@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Character {
     protected String name;
     protected int damage;
@@ -44,5 +46,29 @@ public class Character {
     
     public String toString() {
     	return name + " " + damage + " " + hp + " " + initiative;
+    }
+    
+    //Never used if the character have a class, but serve as a blueprint
+    public void setAttrib() {
+    	Scanner sc = new Scanner(System.in);
+    	int entryInt;
+    	String entry;
+    	System.out.println("Type here, the stats of your character...");
+        System.out.println("What is the name of your character ?");
+        entry = sc.nextLine();
+        System.out.println(" ");
+		this.setName(entry);
+        System.out.println("What is the strenght of your character ?");
+        entryInt = sc.nextInt();
+        System.out.println(" ");
+        this.setDamage(entryInt);
+        System.out.println("What is the vitality of your character ?");
+        entryInt = sc.nextInt();
+        System.out.println(" ");
+        this.setHp(entryInt);
+        System.out.println("What is the speed of your character ?");
+        entryInt = sc.nextInt();
+        System.out.println(" ");
+        this.setInitiative(entryInt);
     }
 }

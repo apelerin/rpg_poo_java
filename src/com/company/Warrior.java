@@ -22,6 +22,10 @@ public class Warrior extends Character {
     	System.out.println(this.getName() + " blocked " + this.getShield() + " damages.");
     	this.hp = this.hp - (amount - this.getShield());
     }
+
+    public String toString() {
+        return "Name : " + this.getName() + "\nStrenght : " + this.getStrenght() + "\nHealh : " + this.getHp() + "\nInitiative : " + this.getInitiative() + "\nShield : " + this.getShield() + "\nClass : " + this.getJob();
+    }
     
     public void setAttrib() {
     	Scanner sc = new Scanner(System.in);

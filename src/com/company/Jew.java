@@ -41,9 +41,9 @@ public class Jew extends Character {
         }
     }
 
-    /*public String toString() {
-        return this.getName() + " " + this.getStrenght() + " " + this.getHp() + " " + this.getInitiative() + " " + this.getHeal() + " " + this.getHpMax() + " " + this.getJob();
-    }*/
+    public String toString() {
+        return "Name : " + this.getName() + "\nDamages : " + this.getDamage() + "\nHealh : " + this.getHp() + "\nInitiative : " + this.getInitiative() + "\nHeal : " + this.getHeal() + "\nMax Health : " + this.getHpMax() + "\nClass : " + this.getJob();
+    }
 
     public void setAttrib() {
         Scanner sc = new Scanner(System.in);

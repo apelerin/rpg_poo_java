@@ -37,7 +37,11 @@ public class Thief extends Character {
 		}
 		this.hp = this.hp - amount;
 	}
-	
+
+	public String toString() {
+		return "Name : " + this.getName() + "\nStrenght : " + this.getStrenght() + "\nHealh : " + this.getHp() + "\nInitiative : " + this.getInitiative() + "\nClass : " + this.getJob();
+	}
+
 	public void setAttrib() {
     	Scanner sc = new Scanner(System.in);
     	int entryInt;

@@ -25,6 +25,10 @@ public class Character {
         return this.initiative;
     }
 
+    public int getDamage() {
+        return this.damage;
+    }
+
     public int strenght() {
         return this.damage;
     }

@@ -24,6 +24,10 @@ public class Mage extends Character {
         this.power = this.power / 2;
         return damagePower;
     }
+
+    public String toString() {
+        return "Name : " + this.getName() + "\nDamages : " + this.getDamage() + "\nPower : " + this.getPower() + "\nInitiative : " + this.getInitiative() + "\nClass : " + this.getJob();
+    }
     
     public void setAttrib() {
     	Scanner sc = new Scanner(System.in);

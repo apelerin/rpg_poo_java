@@ -141,6 +141,6 @@ public class Main {
             }
             turn++;
         }
-        System.out.println("The winner is " + winner.getName() + "! The combat ended at turn " + turn + ".");
+        System.out.println("The winner is " + winner.getName() + " with the class " + winner.getJob() + " !\n The combat ended at turn " + turn + ".");
     }
 }

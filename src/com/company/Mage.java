@@ -13,7 +13,11 @@ public class Mage extends Character {
     public int getPower() {
         return this.power;
     }
-    
+
+    /**
+     *
+     * @param amount
+     */
     public void setPower(int amount) {
     	this.power = amount;
     }

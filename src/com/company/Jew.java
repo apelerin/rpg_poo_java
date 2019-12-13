@@ -29,6 +29,7 @@ public class Jew extends Character {
     	return this.maxHp;
     }
 
+    //Heal to health + heal OR heal to max health.
     public void healHp() {
     	if (this.getHp() + this.getHeal() < getHpMax()) {
     		System.out.println(this.name + " Healed himself for " + this.heal + " Hp !");
@@ -44,7 +45,7 @@ public class Jew extends Character {
     public String toString() {
         return "Name : " + this.getName() + "\nDamages : " + this.getDamage() + "\nHealh : " + this.getHp() + "\nInitiative : " + this.getInitiative() + "\nHeal : " + this.getHeal() + "\nMax Health : " + this.getHpMax() + "\nClass : " + this.getJob();
     }
-
+    
     public void setAttrib() {
         Scanner sc = new Scanner(System.in);
         int entryInt;

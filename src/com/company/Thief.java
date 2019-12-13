@@ -8,6 +8,14 @@ public class Thief extends Character {
 	protected boolean haveCrit = false;
 	protected String job = "Thief";
 
+	public int getDodgeChance() {
+		return this.dodgeChance;
+	}
+
+	public int getCritChance() {
+		return this.critChance;
+	}
+
 	public String getJob() {
 		return this.job;
 	}
@@ -39,7 +47,7 @@ public class Thief extends Character {
 	}
 
 	public String toString() {
-		return "Name : " + this.getName() + "\nStrenght : " + this.getStrenght() + "\nHealh : " + this.getHp() + "\nInitiative : " + this.getInitiative() + "\nClass : " + this.getJob();
+		return "Name : " + this.getName() + "\nStrenght : " + this.getStrenght() + "\nHealh : " + this.getHp() + "\nInitiative : " + this.getInitiative() + "\nDodge Chance : " + this.getDodgeChance() + "\nCrit Chance : " + getCritChance() + "\nClass : " + this.getJob();
 	}
 
 	public void setAttrib() {

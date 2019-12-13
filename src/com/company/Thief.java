@@ -47,7 +47,7 @@ public class Thief extends Character {
 	}
 
 	public String toString() {
-		return "Name : " + this.getName() + "\nStrenght : " + this.getStrenght() + "\nHealh : " + this.getHp() + "\nInitiative : " + this.getInitiative() + "\nDodge Chance : " + this.getDodgeChance() + "\nCrit Chance : " + getCritChance() + "\nClass : " + this.getJob();
+		return "Name : " + this.getName() + "\nStrenght : " + this.getDamage() + "\nHealh : " + this.getHp() + "\nInitiative : " + this.getInitiative() + "\nDodge Chance : " + this.getDodgeChance() + "\nCrit Chance : " + getCritChance() + "\nClass : " + this.getJob();
 	}
 
 	public void setAttrib() {

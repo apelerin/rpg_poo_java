@@ -24,7 +24,7 @@ public class Warrior extends Character {
     }
 
     public String toString() {
-        return "Name : " + this.getName() + "\nStrenght : " + this.getStrenght() + "\nHealh : " + this.getHp() + "\nInitiative : " + this.getInitiative() + "\nShield : " + this.getShield() + "\nClass : " + this.getJob();
+        return "Name : " + this.getName() + "\nStrenght : " + this.getDamage() + "\nHealh : " + this.getHp() + "\nInitiative : " + this.getInitiative() + "\nShield : " + this.getShield() + "\nClass : " + this.getJob();
     }
     
     public void setAttrib() {

@@ -35,7 +35,15 @@ public class Jew extends Character {
     		this.hp = this.hp + this.heal;
     		System.out.println(this.name + " has now " + this.hp + " Hp !");
     	}
+    	else {
+    	    this.hp = getHpMax();
+    	    System.out.println(this.name + " Fully healed !");
+        }
     }
+
+    /*public String toString() {
+        return this.getName() + " " + this.getStrenght() + " " + this.getHp() + " " + this.getInitiative() + " " + this.getHeal() + " " + this.getHpMax() + " " + this.getJob();
+    }*/
 
     public void setAttrib() {
         Scanner sc = new Scanner(System.in);

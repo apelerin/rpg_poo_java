@@ -1,1 +1,1 @@
-{"Liste":[{"initiative":99,"heal":99,"name":"Jez","hp":99}]}
+{"Liste":[{"hpMax":10,"damage":10,"initiative":20,"heal":10,"name":"Axel","hp":-10,"job":"Jew"},{"shield":5,"damage":20,"initiative":20,"name":"Zatoto","hp":995,"job":"Warrior"}]}

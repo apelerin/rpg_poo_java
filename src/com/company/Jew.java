@@ -16,10 +16,13 @@ public class Jew extends Character {
     }
 
     public void setHeal(int amount) {
-    	this.maxHp = amount;
         this.heal = amount;
     }
 
+    public void setMaxHp(int amount) {
+    	this.maxHp = amount;
+    }
+    
     public int strenght() {
         healHp();
         return this.damage;
@@ -32,12 +35,12 @@ public class Jew extends Character {
     //Heal to health + heal OR heal to max health.
     public void healHp() {
     	if (this.getHp() + this.getHeal() < getHpMax()) {
-    		System.out.println(this.name + " Healed himself for " + this.heal + " Hp !");
-    		this.hp = this.hp + this.heal;
-    		System.out.println(this.name + " has now " + this.hp + " Hp !");
+    		System.out.println(this.getName() + " Healed himself for " + this.getHeal() + " Hp !");
+    		this.setHp(this.getHp() + this.getHeal());
+    		System.out.println(this.getName() + " has now " + this.getHp() + " Hp !");
     	}
     	else {
-    	    this.hp = getHpMax();
+    	    this.setHp(this.getHpMax());
     	    System.out.println(this.name + " Fully healed !");
         }
     }
@@ -63,6 +66,7 @@ public class Jew extends Character {
         entryInt = sc.nextInt();
         System.out.println(" ");
         this.setHp(entryInt);
+        this.setMaxHp(entryInt);
         System.out.println("What is the speed of your character ?");
         entryInt = sc.nextInt();
         System.out.println(" ");

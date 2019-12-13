@@ -76,7 +76,7 @@ public class Main {
     	Character newCharacter = new Character();
     	Scanner sc = new Scanner(System.in);
     	System.out.println("What class do you want your character to be?");
-    	System.out.println("1. Mage" + '\n' + "2. Warrior" + '\n' + "3. Thief" + '\n' + "4. Priest");
+    	System.out.println("1. Mage" + '\n' + "2. Warrior" + '\n' + "3. Thief" + '\n' + "4. Jew");
     	entryInt = sc.nextInt();
     	while (entryInt < 1 || entryInt > 4) {
     		System.out.println("Please choose a value between 1 and 4.");
@@ -99,7 +99,8 @@ public class Main {
         return newCharacter;
     }
 
-    // list the existing characters
+    // list the existing characters with basics attributes
+    // TODO list particular classes 
     public static void charListCommand(Character[] list_character) {
         for (int i = 0; i < list_character.length; i++) {
             System.out.println("ID : " + i);
@@ -123,21 +124,25 @@ public class Main {
             char1 = char2;
             char2 = tmp;
         }
+        // The combat goes on while one character dies, or when turn 100 is reached 
         while (true) {
             System.out.println("Turn: " + turn);
             System.out.println("Opponent 1: " + char1.getName() + '\n' + "Life: " + char1.getHp());
             System.out.println("Opponent 2: " + char2.getName() + '\n' + "Life: " + char2.getHp());
-            System.out.println(char1.getName() + " attacks " + char2.getName());
+            System.out.println(char1.getName() + " attacks " + char2.getName() + " pour " + char1.getDamage() + " dégâts;");
             char2.receiveDamages(char1.strenght());
             if (char2.getHp() <= 0) {
                 winner = char1;
                 break;
             }
-            System.out.println(char2.getName() + " attacks " + char1.getName());
+            System.out.println(char2.getName() + " attacks " + char1.getName() + " pour " + char2.getDamage() + " dégâts;");
             char1.receiveDamages(char2.strenght());
             if (char1.getHp() <= 0) {
                 winner = char2;
                 break;
+            }
+            if (turn == 100) {
+            	break;
             }
             turn++;
         }

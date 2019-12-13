@@ -1,17 +1,12 @@
 package com.company;
 
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.Scanner;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import org.json.simple.parser.JSONParser;
-
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class Main {
 
@@ -99,17 +94,10 @@ public class Main {
         return newCharacter;
     }
 
-    // list the existing characters with basics attributes
-    // TODO list particular classes 
+    // list the existing characters
     public static void charListCommand(Character[] list_character) {
         for (int i = 0; i < list_character.length; i++) {
-            System.out.println("ID : " + i);
-            System.out.println("Name : " + list_character[i].getName() );
-            System.out.println("Class/ Job : " + list_character[i].getJob() );
-            System.out.println("Strenght : " + list_character[i].strenght() );
-            System.out.println("Health : " + list_character[i].getHp() );
-            System.out.println("Initiative : " + list_character[i].getInitiative() );
-            System.out.println(" ");
+            System.out.println(list_character[i].toString() + '\n');
         }
         System.out.println("CHECK : End of List.");
         System.out.println(" ");
